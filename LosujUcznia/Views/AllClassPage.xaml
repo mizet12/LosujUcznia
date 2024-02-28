@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LosujUcznia.Views.AllClassPage"
+             Title="AllClassPage">
+    <ContentPage.Resources>
+        <StyleSheet Source="/Resources/Styles/AllClassPage.css" />
+    </ContentPage.Resources>
+    <Shell.TitleView>
+        <Label Text="Strona Wszystkich klas" x:Name="Head" />
+    </Shell.TitleView>
+
+    <VerticalStackLayout>
+        <HorizontalStackLayout x:Name="Header">
+            <Editor Placeholder="Nazwa klasy" Text="{Binding NewClassName}" x:Name="NewClassInput"/>
+            <Button Text="Dodaj klasę" Clicked="AddClass_Clicked" x:Name="AddClassButton"/>
+        </HorizontalStackLayout>
+
+        <CollectionView x:Name="ClassCollection" ItemsSource="{Binding Classes}" ItemsLayout="VerticalList">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <HorizontalStackLayout>
+                        <Button Text="{Binding ClassName}" BindingContext="{Binding .}" Clicked="ClassButtonClicked" x:Name="ClassButton"/>
+                    </HorizontalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

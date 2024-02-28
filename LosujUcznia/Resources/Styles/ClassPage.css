@@ -1,0 +1,39 @@
+﻿#Head {
+    text-align: center;
+    font-size: 35;
+} 
+
+^ContentPage {
+    background-color: #ecf0f1;
+    padding: 10;
+    color: black;
+}
+
+.Editors {
+    flex: 1;
+    margin-right: 10;
+}
+
+^Button {
+    background-color: #3498db;
+    color: #fff;
+    margin: 5;
+}
+
+#CollectionLabels > label {
+    font-size: 16;
+    font-weight: bold;
+    margin-right: 5;
+    color: black;
+}
+
+^CollectionView {
+    margin-top: 10;
+}
+
+.Buttons {
+    flex: 1;
+    background-color: #2ecc71;
+    color: #fff;
+    margin: 5;
+}

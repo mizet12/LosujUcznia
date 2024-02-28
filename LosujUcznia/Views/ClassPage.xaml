@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LosujUcznia.Views.ClassPage"
+             Title="ClassPage">
+    <ContentPage.Resources>
+        <StyleSheet Source="/Resources/Styles/ClassPage.css" />
+    </ContentPage.Resources>
+    <Shell.TitleView>
+        <Label Text="Strona klasy" x:Name="Head" />
+    </Shell.TitleView>
+    <VerticalStackLayout>
+        <HorizontalStackLayout x:Name="Editors">
+            <Editor Placeholder="Imie ucznia" Text="{Binding NewStudentName}" StyleClass="Editors"/>
+            <Editor Placeholder="Nazwisko ucznia" Text="{Binding NewStudentSurname}" StyleClass="Editors"/>
+            <Button Text="Dodaj Ucznia" Clicked="AddStudent_Clicked" x:Name="AddStudentButton"/>
+        </HorizontalStackLayout>
+        <CollectionView x:Name="StudentCollection" ItemsSource="{Binding Students}" ItemsLayout="VerticalList">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <HorizontalStackLayout x:Name="CollectionLabels">
+                        <Label Text="{Binding Number, StringFormat='{0}.'}"/>
+                        <Label Text="{Binding Name}"/>
+                        <Label Text="{Binding Surname}"/>
+                        <CheckBox CheckedChanged="CheckBox_CheckedChanged" x:Name="AttendanceCheckBox"/>
+                        <Button Text="Usun ucznia" Clicked="DeleteStudent_Clicked" x:Name="DeleteStudent"/>
+
+                    </HorizontalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <HorizontalStackLayout x:Name="Buttons">
+            <Button Text="Losuj ucznia" Clicked="DrawStudent_Clicked" StyleClass="Buttons" />
+            <Button Text="Usun klase" Clicked="DeleteClass_Clicked" StyleClass="Buttons"/>
+        </HorizontalStackLayout>
+
+
+    </VerticalStackLayout>
+    
+</ContentPage>

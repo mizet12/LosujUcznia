@@ -1,0 +1,32 @@
+﻿#Head{
+    text-align: center;
+    font-size: 35;
+}
+#Header {
+    padding: 10;
+    background-color: #3498db;
+    color: #fff;
+    margin-bottom: 10;
+}
+
+#NewClassInput {
+    flex: 1;
+    margin-right: 10;
+}
+
+#AddClassButton {
+    background-color: #2ecc71;
+    color: #fff;
+}
+
+#ClassCollection {
+    margin-top: 10;
+}
+
+#ClassButton {
+    background-color: #e74c3c;
+    color: #fff;
+    margin: 5;
+    padding: 10;
+    border-radius: 5;
+}
